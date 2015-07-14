@@ -1,14 +1,13 @@
-<head>
-  <title>ramblingHappy</title>
-</head>
-
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  {{> email}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="email">
+  {{#if done}}
+    <p>Thanks mucho. </p>
+  {{else}}b
+    <label for="email">Enter your email address to start using Rambling Happy!</label><br/>
+    <input type="text" id="email" size="45" />
+    <input type="button" id="btn" value="Submit" />
+  {{/if}}
 </template>
