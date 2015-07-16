@@ -1,13 +1,20 @@
 <body>
-  {{> email}}
+  {{ > email }}
 </body>
 
 <template name="email">
   {{#if done}}
     <p>Thanks mucho. </p>
-  {{else}}b
+  {{else}}
     <label for="email">Enter your email address to start using Rambling Happy!</label><br/>
     <input type="text" id="email" size="45" />
     <input type="button" id="btn" value="Submit" />
   {{/if}}
 </template>
+
+<template name = "happyItems">
+  {{ #each happyItems }}
+  	{{ text }}
+  {{ /each }}
+</template>
+

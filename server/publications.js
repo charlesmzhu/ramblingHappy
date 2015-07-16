@@ -1,0 +1,1 @@
+Meteor.publish ( "joys", function () { return Joys.find(); } )
