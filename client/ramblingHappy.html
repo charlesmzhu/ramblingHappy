@@ -1,15 +1,27 @@
+<head>
+    <title>Rambling Happy</title>
+</head>
+
 <body>
   {{ > email }}
 </body>
 
 <template name="email">
   {{#if done}}
-    <p>Thanks mucho. </p>
+    <p>Thanks mucho.</p>
   {{else}}
     <label for="email">Enter your email address to start using Rambling Happy!</label><br/>
     <input type="text" id="email" size="45" />
+    {{ > happysubmit }}
     <input type="button" id="btn" value="Submit" />
   {{/if}}
+</template>
+
+<template name = "happysubmit">
+  <br>
+  <br>
+  <div> Today, I'm grateful for:
+  <div> <textarea id = "happytext" cols="43" rows="5" ></textarea></div> </div>
 </template>
 
 <template name = "happyItems">

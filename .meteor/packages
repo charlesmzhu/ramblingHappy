@@ -9,3 +9,4 @@ autopublish
 insecure
 email
 accounts-ui
+iron:router
