@@ -3,8 +3,18 @@
 </head>
 
 <body>
-  {{ > email }}
+  {{ > mainpage }}
 </body>
+
+<template name="mainPage">
+  {{ > loginButtons }}
+
+  {{ > email }}
+
+  {{ > joySubmit }}
+
+  {{ > joys }}
+</template>
 
 <template name="email">
   {{#if done}}
@@ -12,21 +22,23 @@
   {{else}}
     <label for="email">Enter your email address to start using Rambling Happy!</label><br/>
     <input type="text" id="email" size="45" />
-    {{ > happysubmit }}
     <input type="button" id="btn" value="Submit" />
   {{/if}}
 </template>
 
-<template name = "happysubmit">
+<template name = "joySubmit">
   <br>
   <br>
-  <div> Today, I'm grateful for:
-  <div> <textarea id = "happytext" cols="43" rows="5" ></textarea></div> </div>
+  Today, I'm grateful for: <br>
+  <form id = "submitJoy">
+    <textarea id = "joytext" cols="43" rows="5" ></textarea>
+    <input type = "submit" value = "Add word">
+  </form>
 </template>
 
-<template name = "happyItems">
-  {{ #each happyItems }}
-  	{{ text }}
+<template name = "joys">
+  {{ #each joys }}
+  	{{ content }}
   {{ /each }}
 </template>
 
