@@ -1,8 +1,16 @@
+Meteor.subscribe ( 'joys', Meteor.userId() );
+
+
 Template.joys.helpers ({
   joys: function () {
   	return Joys.find();
-  }
-})
+  },
+
+  dateString: function () {
+  	return this.createdAt.toLocaleDateString();
+  },
+});
+
 
 Template.joySubmit.events ({
   'submit #submitJoy': function (e) {
@@ -11,7 +19,7 @@ Template.joySubmit.events ({
 	Meteor.call('addJoy', $('#joytext').val() );
 	return false;
   }
-})
+});
 
 Template.email.events({
   'click #btn': function () {

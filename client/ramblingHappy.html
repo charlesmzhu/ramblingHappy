@@ -7,7 +7,11 @@
 </body>
 
 <template name="mainPage">
-  {{ > loginButtons }}
+  <div class="collapse navbar-collapse" id="navigation">
+    <ul class="nav navbar-nav navbar-right">
+      {{> loginButtons}}
+    </ul>
+  </div>
 
   {{ > email }}
 
@@ -37,8 +41,9 @@
 </template>
 
 <template name = "joys">
+  Here's a few things you were happy about in the past:
   {{ #each joys }}
-  	{{ content }}
+  	<div>On {{ dateString }}, you were happy for: {{ content }}</div>
   {{ /each }}
 </template>
 
