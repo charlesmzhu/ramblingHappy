@@ -24,7 +24,13 @@ Template.joySubmit.events ({
 Template.email.events({
   'click #btn': function () {
     // if someone click on the button ( tag), then we ask the server to execute the function sendEmail (RPC call)
-    // Meteor.call('sendEmail', $('#email').val() );
+    Meteor.call('scheduleMail', {
+      to: $('#email').val(),
+      from: 'charlesmzhu@gmail.com',
+      subject: "Are you closer to who you want to become?",
+      text: "test email",
+      date: new Date()
+    });
     Session.set('done', true);
   }
 });
