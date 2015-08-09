@@ -9,3 +9,4 @@ email
 accounts-ui
 iron:router
 accounts-password
+percolate:synced-cron
